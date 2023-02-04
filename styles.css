@@ -1,0 +1,39 @@
+* {
+  border: 2px solid coral;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+.container {
+  width: 30em;
+  height: 40em;
+}
+
+.display {
+  height: 7em;
+  text-align: right;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.buttons div {
+  flex: 1;
+  min-width: 7em;
+  min-height: 5em;
+}
+
+.zero {
+}
