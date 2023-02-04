@@ -14,10 +14,19 @@ function divide(a, b) {
   return a / b;
 }
 
+function operate(operator, a, b) {
+  if ((operator = "+")) {
+    return add(a, b);
+  } else if ((operator = "-")) {
+    return subtract(a, b);
+  } else if ((operator = "*")) {
+    return multiply(a, b);
+  } else if ((operator = "/")) {
+    return divide(a, b);
+  }
+}
+
 //function operate should take one operator and two numbers,
 //and call one of the above functions on numbers.
 ///
 //does computer know that callback is a function...?
-function operate(operator, x, y) {
-  return callback(x, y);
-}
