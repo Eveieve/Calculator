@@ -26,7 +26,25 @@ function operate(operator, a, b) {
   }
 }
 
-//function operate should take one operator and two numbers,
-//and call one of the above functions on numbers.
-///
-//does computer know that callback is a function...?
+//grab buttons and add eventlistenrs to them, so the numbers populate the display when btns are clicked.
+
+// let numbers = [];
+
+// for (let i = 0; i < 10; i++) {
+//   const number = document.createElement("p"); //number isn't a dom yet? what?
+//   // number.textContent = `${i}`; //why don't I see this?
+//   // number.style.cssText = "display: inline";
+//   number.classList.add("num");
+//   numbers.push(number);
+// }
+
+const display = document.querySelector(".display");
+
+const btns = document.querySelectorAll(".buttons .num");
+const btnsArr = Array.from(btns);
+
+for (let i = 0; i < btnsArr.length; i++) {
+  btnsArr[i].addEventListener("click", () => (display.textContent += `${i}`));
+  //assign value to each button.
+  btnsArr[i] = i;
+}

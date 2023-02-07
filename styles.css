@@ -25,15 +25,17 @@ body {
 
 .buttons {
   display: flex;
+
   flex-wrap: wrap;
   text-align: center;
 }
 
-.buttons div {
+.buttons button {
   flex: 1;
-  min-width: 7em;
+  min-width: 8em;
   min-height: 5em;
 }
 
-.zero {
+#zero {
+  flex-grow: 2;
 }
