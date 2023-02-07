@@ -44,7 +44,8 @@ const btns = document.querySelectorAll(".buttons .num");
 const btnsArr = Array.from(btns);
 
 for (let i = 0; i < btnsArr.length; i++) {
-  btnsArr[i].addEventListener("click", () => (display.textContent += `${i}`));
-  //assign value to each button.
-  btnsArr[i] = i;
+  btnsArr[i].addEventListener(
+    "click",
+    () => (display.textContent += btnsArr[i].textContent)
+  );
 }
