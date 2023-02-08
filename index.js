@@ -25,9 +25,6 @@ function operate(operator, a, b) {
     return divide(a, b);
   }
 }
-
-//grab buttons and add eventlistenrs to them, so the numbers populate the display when btns are clicked.
-
 // let numbers = [];
 
 // for (let i = 0; i < 10; i++) {
