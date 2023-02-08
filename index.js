@@ -14,28 +14,54 @@ function divide(a, b) {
   return a / b;
 }
 
-function operate(operator, a, b) {
-  if ((operator = "+")) {
-    return add(a, b);
-  } else if ((operator = "-")) {
-    return subtract(a, b);
-  } else if ((operator = "*")) {
-    return multiply(a, b);
-  } else if ((operator = "/")) {
-    return divide(a, b);
-  }
+let previousNum;
+let currNum;
+
+function operate(storedOp, previousNum, currNum) {
+  if (storedOp == "+") {
+    return add(previousNum, currNum);
+  } else if (storedOp == "-") {
+    return subtract(previousNum, currNum);
+  } else if (storedOp == "*") {
+    return multiply(previousNum, currNum);
+  } else if (storedOp == "/") {
+    return divide(previousNum, currNum);
+  } else console.log("ERROR!");
 }
+
 const display = document.querySelector(".display");
 
 const btns = document.querySelectorAll(".buttons .num");
 const btnsArr = Array.from(btns);
 
-let storedNum;
-
 for (let i = 0; i < btnsArr.length; i++) {
   btnsArr[i].addEventListener("click", () => {
-    display.textContent += btnsArr[i].textContent;
-    storedNum = Number(btnsArr[i].textContent);
-    console.log(storedNum);
+    display.textContent = btnsArr[i].textContent;
+    previousNum = Number(btnsArr[i].textContent);
+    console.log(previousNum);
   });
 }
+
+for (let k = 0; k < btnsArr.length; k++) {
+  btnsArr[k].addEventListener("click", () => {
+    display.textContent = btnsArr[k].textContent;
+    currNum = Number(btnsArr[k].textContent);
+    console.log(currNum);
+  });
+}
+
+let ops = document.querySelectorAll(".buttons .op");
+let opsArr = Array.from(ops);
+
+let storedOp;
+
+ops.forEach((operator) =>
+  operator.addEventListener("click", () => {
+    storedOp = operator.textContent;
+    console.log(storedOp);
+  })
+);
+
+const equal = document.querySelector(".equal");
+// console.log(equal);
+equal.addEventListener("click", operate);
