@@ -38,17 +38,13 @@ function getNum() {
   if (previousNum === undefined) {
     display.textContent = this.textContent;
     previousNum = Number(this.textContent);
-    // console.log(previousNum);
+    console.log(previousNum);
   } else {
     display.textContent = this.textContent;
     currNum = Number(this.textContent);
-    // console.log(currNum);
+    console.log(currNum);
   }
 }
-
-// for (let i = 0; i < btnsArr.length; i++) {
-//   btnsArr[i].addEventListener("click", getNum);
-// }
 
 btnsArr.forEach((num) => num.addEventListener("click", getNum));
 
@@ -63,7 +59,11 @@ function getOp() {
 }
 
 opsArr.forEach((operator) => operator.addEventListener("click", getOp));
-
+console.log(storedOp);
 const equal = document.querySelector(".equal");
-// console.log(equal);
-equal.addEventListener("click", operate);
+
+// equal.addEventListener("click", () => operate(storedOp, previousNum, currNum));
+equal.addEventListener("click", () => {
+  console.table({ storedOp, previousNum, currNum });
+  operate(storedOp, previousNum, currNum);
+});
