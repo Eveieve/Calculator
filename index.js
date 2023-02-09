@@ -46,9 +46,11 @@ function getNum() {
   }
 }
 
-for (let i = 0; i < btnsArr.length; i++) {
-  btnsArr[i].addEventListener("click", getNum);
-}
+// for (let i = 0; i < btnsArr.length; i++) {
+//   btnsArr[i].addEventListener("click", getNum);
+// }
+
+btnsArr.forEach((num) => num.addEventListener("click", getNum));
 
 let ops = document.querySelectorAll(".buttons .op");
 let opsArr = Array.from(ops);
