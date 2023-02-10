@@ -42,20 +42,17 @@ const display = document.querySelector(".display");
 
 const btns = document.querySelectorAll(".buttons .num");
 const btnsArr = Array.from(btns);
-// const previous = document.createElement('p');
 
 function getNum() {
   if (previous === undefined || storedOp === undefined) {
     display.textContent += this.textContent;
-    let finalNum = Number(display.textContent);
-    previous = finalNum;
+    previous = Number(display.textContent);
     console.log(previous);
-  } else {
-    //remove diplay text
-    display.textContent = "";
+  } else if (previous !== undefined && storedOp !== undefined) {
+    if (curr === undefined) display.textContent = "";
     display.textContent += this.textContent;
-    let finalNum = Number(display.textContent);
-    curr = finalNum;
+    let finalCurr = Number(display.textContent);
+    curr = finalCurr;
     console.log(curr);
   }
 }
