@@ -20,21 +20,18 @@ let acc;
 
 function operate(storedOp, previous, curr) {
   if (storedOp === "+") {
-    acc = add(previous, curr);
+    return (acc = add(previous, curr));
     console.log(acc);
-    display.textContent = acc;
   } else if (storedOp === "-") {
-    acc = subtract(previous, curr);
+    return (acc = subtract(previous, curr));
     console.log(acc);
-    display.textContent = acc;
   } else if (storedOp === "*") {
-    acc = multiply(previous, curr);
-    console.log(acc);
+    return (acc = multiply(previous, curr));
+
     display.textContent = acc;
   } else if (storedOp === "/") {
-    acc = divide(previous, curr);
+    return (acc = divide(previous, curr));
     console.log(acc);
-    display.textContent = acc;
   } else console.log("ERROR!");
 }
 
@@ -77,8 +74,10 @@ equal.addEventListener("click", () => {
   if (acc === undefined) {
     console.table({ storedOp, previous, curr });
     operate(storedOp, previous, curr);
+    display.textContent = acc;
   } else if (acc !== undefined) {
     console.table({ storedOp, acc, curr });
     operate(storedOp, acc, curr);
+    display.textContent = acc;
   }
 });
