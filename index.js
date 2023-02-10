@@ -18,7 +18,6 @@ let previous;
 let curr;
 let acc;
 
-// const dsplyAcc =
 function operate(storedOp, previous, curr) {
   if (storedOp === "+") {
     acc = add(previous, curr);
@@ -45,12 +44,13 @@ const btns = document.querySelectorAll(".buttons .num");
 const btnsArr = Array.from(btns);
 
 function getNum() {
-  if (previous === undefined) {
-    display.textContent = this.textContent;
-    previous = Number(this.textContent);
+  if (previous === undefined || storedOp === undefined) {
+    display.textContent += this.textContent;
+    let finalNum = Number(display.textContent);
+    previous = finalNum;
     console.log(previous);
   } else {
-    display.textContent = this.textContent;
+    display.textContent += this.textContent;
     curr = Number(this.textContent);
     console.log(curr);
   }
