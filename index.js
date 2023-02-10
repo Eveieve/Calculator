@@ -42,6 +42,7 @@ const display = document.querySelector(".display");
 
 const btns = document.querySelectorAll(".buttons .num");
 const btnsArr = Array.from(btns);
+// const previous = document.createElement('p');
 
 function getNum() {
   if (previous === undefined || storedOp === undefined) {
@@ -50,8 +51,11 @@ function getNum() {
     previous = finalNum;
     console.log(previous);
   } else {
+    //remove diplay text
+    display.textContent = "";
     display.textContent += this.textContent;
-    curr = Number(this.textContent);
+    let finalNum = Number(display.textContent);
+    curr = finalNum;
     console.log(curr);
   }
 }
