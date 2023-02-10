@@ -18,19 +18,24 @@ let previous;
 let curr;
 let acc;
 
+// const dsplyAcc =
 function operate(storedOp, previous, curr) {
   if (storedOp === "+") {
     acc = add(previous, curr);
     console.log(acc);
+    display.textContent = acc;
   } else if (storedOp === "-") {
     acc = subtract(previous, curr);
     console.log(acc);
+    display.textContent = acc;
   } else if (storedOp === "*") {
     acc = multiply(previous, curr);
     console.log(acc);
+    display.textContent = acc;
   } else if (storedOp === "/") {
     acc = divide(previous, curr);
     console.log(acc);
+    display.textContent = acc;
   } else console.log("ERROR!");
 }
 
