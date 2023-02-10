@@ -14,18 +14,23 @@ function divide(a, b) {
   return a / b;
 }
 
-let previousNum;
-let currNum;
+let previous;
+let curr;
+let acc;
 
-function operate(storedOp, previousNum, currNum) {
+function operate(storedOp, previous, curr) {
   if (storedOp === "+") {
-    console.log(add(previousNum, currNum));
+    acc = add(previous, curr);
+    console.log(acc);
   } else if (storedOp === "-") {
-    console.log(subtract(previousNum, currNum));
+    acc = subtract(previous, curr);
+    console.log(acc);
   } else if (storedOp === "*") {
-    console.log(multiply(previousNum, currNum));
+    acc = multiply(previous, curr);
+    console.log(acc);
   } else if (storedOp === "/") {
-    console.log(divide(previousNum, currNum));
+    acc = divide(previous, curr);
+    console.log(acc);
   } else console.log("ERROR!");
 }
 
@@ -35,14 +40,14 @@ const btns = document.querySelectorAll(".buttons .num");
 const btnsArr = Array.from(btns);
 
 function getNum() {
-  if (previousNum === undefined) {
+  if (previous === undefined) {
     display.textContent = this.textContent;
-    previousNum = Number(this.textContent);
-    console.log(previousNum);
+    previous = Number(this.textContent);
+    console.log(previous);
   } else {
     display.textContent = this.textContent;
-    currNum = Number(this.textContent);
-    console.log(currNum);
+    curr = Number(this.textContent);
+    console.log(curr);
   }
 }
 
@@ -59,13 +64,15 @@ function getOp() {
 }
 
 opsArr.forEach((operator) => operator.addEventListener("click", getOp));
-console.log(storedOp);
+
 const equal = document.querySelector(".equal");
 
 equal.addEventListener("click", () => {
-  console.table({ storedOp, previousNum, currNum });
-  operate(storedOp, previousNum, currNum);
+  if (acc === undefined) {
+    console.table({ storedOp, previous, curr });
+    operate(storedOp, previous, curr);
+  } else if (acc !== undefined) {
+    console.table({ storedOp, acc, curr });
+    operate(storedOp, acc, curr);
+  }
 });
-// equal.addEventListener("click", () => {
-//   operate(storedOp, previousNum, currNum);
-// });
