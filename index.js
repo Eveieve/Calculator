@@ -27,8 +27,6 @@ function operate(storedOp, previous, curr) {
     console.log(acc);
   } else if (storedOp === "*") {
     return (acc = multiply(previous, curr));
-
-    display.textContent = acc;
   } else if (storedOp === "/") {
     return (acc = divide(previous, curr));
     console.log(acc);
@@ -47,9 +45,10 @@ function getNum() {
     console.log(previous);
   } else if (previous !== undefined && storedOp !== undefined) {
     if (curr === undefined) display.textContent = "";
+
     display.textContent += this.textContent;
-    let finalCurr = Number(display.textContent);
-    curr = finalCurr;
+    curr = Number(display.textContent);
+
     console.log(curr);
   }
 }
@@ -75,9 +74,13 @@ equal.addEventListener("click", () => {
     console.table({ storedOp, previous, curr });
     operate(storedOp, previous, curr);
     display.textContent = acc;
+    console.log(acc);
+    curr = undefined;
   } else if (acc !== undefined) {
     console.table({ storedOp, acc, curr });
     operate(storedOp, acc, curr);
     display.textContent = acc;
+    console.log(acc);
+    curr = undefined;
   }
 });
