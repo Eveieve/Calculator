@@ -110,3 +110,16 @@ equal.addEventListener("click", () => {
     curr = undefined;
   }
 });
+
+const cancelBtn = document.querySelector(".cancelBtn");
+
+function cancelCalc() {
+  display.textContent = "";
+  //clear all previous input
+  previous = undefined;
+  storedOp = undefined;
+  acc = undefined;
+  curr = undefined;
+}
+
+cancelBtn.addEventListener("click", cancelCalc);
