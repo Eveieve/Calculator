@@ -73,19 +73,19 @@ function getOp() {
   } else if (curr !== undefined && acc !== undefined) {
     console.table({ storedOp, acc, curr });
     operate(storedOp, acc, curr);
-    display.textContent = acc;
+    display.textContent = Number(acc.toFixed(7));
     console.log(acc);
     curr = undefined;
   } else if (acc === undefined) {
     console.table({ storedOp, previous, curr });
     operate(storedOp, previous, curr);
-    display.textContent = acc;
+    display.textContent = Number(acc.toFixed(7));
     console.log(acc);
     curr = undefined;
   } else if (acc !== undefined) {
     console.table({ storedOp, acc, curr });
     operate(storedOp, acc, curr);
-    display.textContent = acc;
+    display.textContent = Number(acc.toFixed(7));
     console.log(acc);
     curr = undefined;
   }
@@ -99,13 +99,13 @@ equal.addEventListener("click", () => {
   if (acc === undefined) {
     console.table({ storedOp, previous, curr });
     operate(storedOp, previous, curr);
-    display.textContent = acc;
+    display.textContent = Number(acc.toFixed(7));
     console.log(acc);
     curr = undefined;
   } else if (acc !== undefined) {
     console.table({ storedOp, acc, curr });
     operate(storedOp, acc, curr);
-    display.textContent = acc;
+    display.textContent = Number(acc.toFixed(7));
     console.log(acc);
     curr = undefined;
   }
