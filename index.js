@@ -20,16 +20,21 @@ let acc;
 
 function operate(storedOp, previous, curr) {
   if (storedOp === "+") {
-    return (acc = add(previous, curr));
+    acc = add(previous, curr);
     console.log(acc);
+    return acc;
   } else if (storedOp === "-") {
-    return (acc = subtract(previous, curr));
+    acc = subtract(previous, curr);
     console.log(acc);
+    return acc;
   } else if (storedOp === "*") {
-    return (acc = multiply(previous, curr));
-  } else if (storedOp === "/") {
-    return (acc = divide(previous, curr));
+    acc = multiply(previous, curr);
     console.log(acc);
+    return acc;
+  } else if (storedOp === "/") {
+    acc = divide(previous, curr);
+    console.log(acc);
+    return acc;
   } else console.log("ERROR!");
 }
 
@@ -61,8 +66,29 @@ let opsArr = Array.from(ops);
 let storedOp;
 
 function getOp() {
-  storedOp = this.textContent;
-  console.log(storedOp);
+  if (previous !== undefined && curr === undefined) {
+    storedOp = this.textContent;
+    console.log(storedOp);
+    return storedOp;
+  } else if (curr !== undefined && acc !== undefined) {
+    console.table({ storedOp, acc, curr });
+    operate(storedOp, acc, curr);
+    display.textContent = acc;
+    console.log(acc);
+    curr = undefined;
+  } else if (acc === undefined) {
+    console.table({ storedOp, previous, curr });
+    operate(storedOp, previous, curr);
+    display.textContent = acc;
+    console.log(acc);
+    curr = undefined;
+  } else if (acc !== undefined) {
+    console.table({ storedOp, acc, curr });
+    operate(storedOp, acc, curr);
+    display.textContent = acc;
+    console.log(acc);
+    curr = undefined;
+  }
 }
 
 opsArr.forEach((operator) => operator.addEventListener("click", getOp));
