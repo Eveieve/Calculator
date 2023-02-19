@@ -68,9 +68,6 @@ h6 {
   isolation: isolate;
 }
 
-* {
-  border: 1px solid coral;
-}
 body {
   display: flex;
   justify-content: center;
@@ -78,12 +75,13 @@ body {
 }
 
 .container {
-  width: 30em;
-  min-height: 40em;
+  width: 20rem;
+  min-height: 22rem;
+  border: 2px solid indigo;
 }
 
 .display {
-  height: 7em;
+  height: 6rem;
   text-align: right;
 }
 
@@ -95,12 +93,14 @@ body {
 }
 
 .buttons button {
-  /* flex: 1; */
   width: 25%;
-  min-height: 5em;
+  min-height: 4.5rem;
 }
 
 #zero {
   width: 50%;
-  min-width: 14em;
 }
+
+/* displayText {
+
+} */
