@@ -62,6 +62,7 @@ function deleteNum() {
 
 function getNum() {
   if (previous === undefined || storedOp === undefined) {
+    if (previous === undefined) display.textContent = "";
     display.textContent += this.textContent;
     deleteBtn.addEventListener("click", deleteNum);
 
