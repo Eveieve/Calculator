@@ -77,24 +77,27 @@ body {
 .container {
   width: 20rem;
   min-height: 22rem;
-  border: 2px solid indigo;
+  border: 1rem solid #31332e;
+  border-radius: 1rem;
 }
 
 .display {
-  height: 6rem;
+  height: 5rem;
   text-align: right;
 }
 
 .buttons {
   display: flex;
-
   flex-wrap: wrap;
   text-align: center;
 }
-
+.cancelBtn {
+  min-width: 50%;
+}
 .buttons button {
   width: 25%;
   min-height: 4.5rem;
+  border-radius: 3rem;
 }
 
 #zero {

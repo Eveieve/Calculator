@@ -39,8 +39,8 @@ function operate(storedOp, previous, curr) {
 }
 
 const display = document.querySelector(".display");
-
-display.style.cssText = "font-size: 2rem; position: relative; top: 2rem";
+display.textContent = "0";
+display.style.cssText = "font-size: 3rem; position: relative; top: 1rem";
 
 const btns = document.querySelectorAll(".buttons .num");
 const btnsArr = Array.from(btns);
@@ -165,8 +165,6 @@ function cancelCalc() {
 
 cancelBtn.addEventListener("click", cancelCalc);
 
-//if there is a decimal point in the display, disable the button
-
 function checkDecimal() {
   if (display.textContent.includes(".")) {
     document.getElementById("decimal").disabled = true;
@@ -174,13 +172,3 @@ function checkDecimal() {
 }
 
 const deleteBtn = document.querySelector(".delete");
-
-//when divided by zero
-//when curr is zero after /
-//That's always 0!
-
-const zero = document.querySelector("#zero");
-
-function zeroMsg() {
-  display.textContent = "That's always 0!";
-}
