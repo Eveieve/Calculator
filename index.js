@@ -53,13 +53,18 @@ function deleteNum() {
     0,
     display.textContent.length - 1
   );
-  previous = Number(display.textContent);
+  if (acc === undefined) {
+    previous = Number(display.textContent);
+  } else if (acc !== undefined) {
+    acc = Number(display.textContent);
+  }
 }
 
 function getNum() {
   if (previous === undefined || storedOp === undefined) {
     display.textContent += this.textContent;
     deleteBtn.addEventListener("click", deleteNum);
+
     previous = Number(display.textContent);
     console.log(previous);
   } else if (previous !== undefined && storedOp !== undefined) {
@@ -68,7 +73,6 @@ function getNum() {
     display.textContent += this.textContent;
     deleteBtn.addEventListener("click", deleteNum);
     curr = Number(display.textContent);
-
     console.log(curr);
   }
   checkDecimal();
