@@ -156,7 +156,7 @@ equal.addEventListener("click", () => {
 const cancelBtn = document.querySelector(".cancelBtn");
 
 function cancelCalc() {
-  display.textContent = "";
+  display.textContent = "0";
   //clear all previous input
   previous = undefined;
   storedOp = undefined;
