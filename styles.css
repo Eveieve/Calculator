@@ -77,18 +77,19 @@ body {
 .container {
   width: 20rem;
   min-height: 22rem;
-  border: 0.8rem solid #31332e;
-  border-radius: 1rem;
-  background-color: #31332e;
+  border: 0.8rem solid cornflowerblue;
+  border-radius: 0.8rem;
+  background-color: cornflowerblue;
 }
 
 .display {
   height: 5rem;
   text-align: right;
-  border: 5px solid black;
+  border: 6px solid rgb(87, 128, 204);
   border-radius: 1rem;
   padding-right: 5px;
   background-color: aliceblue;
+  margin-bottom: 5px;
 }
 
 .buttons {
@@ -102,10 +103,16 @@ body {
   width: 25%;
   height: 4rem;
   border-radius: 1.5rem;
-  font-size: 1.3rem;
-  border: 5px solid #31332e;
+  font-size: 1.2rem;
+  border: 5px solid cornflowerblue;
+  cursor: pointer;
+  font-family: monospace;
+  color: rgb(30, 64, 128);
 }
 
+button:hover {
+  background-color: rgb(221, 221, 136);
+}
 #zero {
   width: 50%;
 }
