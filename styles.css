@@ -77,33 +77,35 @@ body {
 .container {
   width: 20rem;
   min-height: 22rem;
-  border: 1rem solid #31332e;
+  border: 0.8rem solid #31332e;
   border-radius: 1rem;
+  background-color: #31332e;
 }
 
 .display {
   height: 5rem;
   text-align: right;
+  border: 5px solid black;
+  border-radius: 1rem;
+  padding-right: 5px;
+  background-color: aliceblue;
 }
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
 }
 .cancelBtn {
   min-width: 50%;
 }
 .buttons button {
   width: 25%;
-  min-height: 4.5rem;
-  border-radius: 3rem;
+  height: 4rem;
+  border-radius: 1.5rem;
+  font-size: 1.3rem;
+  border: 5px solid #31332e;
 }
 
 #zero {
   width: 50%;
 }
-
-/* displayText {
-
-} */

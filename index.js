@@ -40,7 +40,7 @@ function operate(storedOp, previous, curr) {
 
 const display = document.querySelector(".display");
 display.textContent = "0";
-display.style.cssText = "font-size: 3rem; position: relative; top: 1rem";
+display.style.cssText = "font-size: 3rem;";
 
 const btns = document.querySelectorAll(".buttons .num");
 const btnsArr = Array.from(btns);
