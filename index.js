@@ -58,6 +58,7 @@ function getNum() {
 
     console.log(curr);
   }
+  checkDecimal();
 }
 
 btnsArr.forEach((num) => num.addEventListener("click", getNum));
@@ -125,3 +126,11 @@ function cancelCalc() {
 }
 
 cancelBtn.addEventListener("click", cancelCalc);
+
+//if there is a decimal point in the display, disable the button
+
+function checkDecimal() {
+  if (display.textContent.includes(".")) {
+    document.getElementById("decimal").disabled = true;
+  } else document.getElementById("decimal").disabled = false;
+}
