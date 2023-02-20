@@ -80,6 +80,7 @@ body {
   border: 0.8rem solid cornflowerblue;
   border-radius: 0.8rem;
   background-color: cornflowerblue;
+  outline: 0.5rem solid rgb(67, 98, 156);
 }
 
 .display {
@@ -111,7 +112,7 @@ body {
 }
 
 button:hover {
-  background-color: rgb(221, 221, 136);
+  background-color: rgb(243, 243, 149);
 }
 #zero {
   width: 50%;
