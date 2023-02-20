@@ -45,6 +45,17 @@ display.style.cssText = "font-size: 2rem; position: relative; top: 2rem";
 const btns = document.querySelectorAll(".buttons .num");
 const btnsArr = Array.from(btns);
 
+//delete last digit when clicked
+
+function deleteNum() {
+  console.log("delete");
+  display.textContent = display.textContent.slice(
+    0,
+    display.textContent.length - 1
+  );
+  previous = Number(display.textContent);
+}
+
 function getNum() {
   if (previous === undefined || storedOp === undefined) {
     display.textContent += this.textContent;
@@ -138,15 +149,5 @@ function checkDecimal() {
 }
 
 const deleteBtn = document.querySelector(".delete");
-
-//delete last digit when clicked
-
-function deleteNum() {
-  console.log("delete");
-  return (display.textContent = display.textContent.slice(
-    0,
-    display.textContent.length - 1
-  ));
-}
 
 // deleteBtn.addEventListener("click", deleteNum);
