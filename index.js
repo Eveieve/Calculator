@@ -91,23 +91,35 @@ function getOp() {
     console.log(storedOp);
     return storedOp;
   } else if (curr !== undefined && acc !== undefined) {
-    console.table({ storedOp, acc, curr });
-    operate(storedOp, acc, curr);
-    display.textContent = Number(acc.toFixed(7));
-    console.log(acc);
-    curr = undefined;
+    if (storedOp === "/" && curr === 0) {
+      display.textContent = "That's always 0!";
+    } else {
+      console.table({ storedOp, acc, curr });
+      operate(storedOp, acc, curr);
+      display.textContent = Number(acc.toFixed(7));
+      console.log(acc);
+      curr = undefined;
+    }
   } else if (acc === undefined) {
-    console.table({ storedOp, previous, curr });
-    operate(storedOp, previous, curr);
-    display.textContent = Number(acc.toFixed(7));
-    console.log(acc);
-    curr = undefined;
+    if (storedOp === "/" && curr === 0) {
+      display.textContent = "That's always 0!";
+    } else {
+      console.table({ storedOp, previous, curr });
+      operate(storedOp, previous, curr);
+      display.textContent = Number(acc.toFixed(7));
+      console.log(acc);
+      curr = undefined;
+    }
   } else if (acc !== undefined) {
-    console.table({ storedOp, acc, curr });
-    operate(storedOp, acc, curr);
-    display.textContent = Number(acc.toFixed(7));
-    console.log(acc);
-    curr = undefined;
+    if (storedOp === "/" && curr === 0) {
+      display.textContent = "That's always 0!";
+    } else {
+      console.table({ storedOp, acc, curr });
+      operate(storedOp, acc, curr);
+      display.textContent = Number(acc.toFixed(7));
+      console.log(acc);
+      curr = undefined;
+    }
   }
 }
 
@@ -119,15 +131,24 @@ equal.addEventListener("click", () => {
   if (acc === undefined) {
     console.table({ storedOp, previous, curr });
     operate(storedOp, previous, curr);
-    display.textContent = Number(acc.toFixed(7));
-    console.log(acc);
-    curr = undefined;
+    if (storedOp === "/" && curr === 0) {
+      console.log("zero?");
+      display.textContent = "That's always 0!";
+    } else {
+      display.textContent = Number(acc.toFixed(7));
+      console.log(acc);
+      curr = undefined;
+    }
   } else if (acc !== undefined) {
     console.table({ storedOp, acc, curr });
-    operate(storedOp, acc, curr);
-    display.textContent = Number(acc.toFixed(7));
-    console.log(acc);
-    curr = undefined;
+    if (storedOp === "/" && curr === 0) {
+      display.textContent = "That's always 0!";
+    } else {
+      operate(storedOp, acc, curr);
+      display.textContent = Number(acc.toFixed(7));
+      console.log(acc);
+      curr = undefined;
+    }
   }
 });
 
@@ -154,4 +175,12 @@ function checkDecimal() {
 
 const deleteBtn = document.querySelector(".delete");
 
-// deleteBtn.addEventListener("click", deleteNum);
+//when divided by zero
+//when curr is zero after /
+//That's always 0!
+
+const zero = document.querySelector("#zero");
+
+function zeroMsg() {
+  display.textContent = "That's always 0!";
+}
