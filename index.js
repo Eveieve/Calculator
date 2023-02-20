@@ -48,12 +48,14 @@ const btnsArr = Array.from(btns);
 function getNum() {
   if (previous === undefined || storedOp === undefined) {
     display.textContent += this.textContent;
+    deleteBtn.addEventListener("click", deleteNum);
     previous = Number(display.textContent);
     console.log(previous);
   } else if (previous !== undefined && storedOp !== undefined) {
     if (curr === undefined) display.textContent = "";
 
     display.textContent += this.textContent;
+    deleteBtn.addEventListener("click", deleteNum);
     curr = Number(display.textContent);
 
     console.log(curr);
@@ -134,3 +136,17 @@ function checkDecimal() {
     document.getElementById("decimal").disabled = true;
   } else document.getElementById("decimal").disabled = false;
 }
+
+const deleteBtn = document.querySelector(".delete");
+
+//delete last digit when clicked
+
+function deleteNum() {
+  console.log("delete");
+  return (display.textContent = display.textContent.slice(
+    0,
+    display.textContent.length - 1
+  ));
+}
+
+// deleteBtn.addEventListener("click", deleteNum);
