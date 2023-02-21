@@ -41,7 +41,7 @@ function operate(storedOp, previous, curr) {
 const display = document.querySelector(".display");
 display.textContent = "0";
 display.style.cssText =
-  "display:flex; align-items: center; flex-direction: row-reverse; color:  rgb(30, 64, 128);padding-right: 0.6rem; font-size: 2.0rem; font-family: monospace";
+  "overflow: hidden; display:flex; align-items: center; flex-direction: row-reverse; color:  rgb(30, 64, 128);padding-right: 0.6rem; font-size: 2.2rem; font-family: monospace";
 
 const btns = document.querySelectorAll(".buttons .num");
 const btnsArr = Array.from(btns);
