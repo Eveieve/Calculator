@@ -41,7 +41,7 @@ function operate(storedOp, previous, curr) {
 const display = document.querySelector(".display");
 display.textContent = "0";
 display.style.cssText =
-  "display:flex; align-items: center; flex-direction: row-reverse; color:  rgb(30, 64, 128);padding-right: 0.6rem; font-size: 2.5rem; font-family: monospace";
+  "display:flex; align-items: center; flex-direction: row-reverse; color:  rgb(30, 64, 128);padding-right: 0.6rem; font-size: 2.0rem; font-family: monospace";
 
 const btns = document.querySelectorAll(".buttons .num");
 const btnsArr = Array.from(btns);
@@ -94,7 +94,7 @@ function getOp() {
     return storedOp;
   } else if (curr !== undefined && acc !== undefined) {
     if (storedOp === "/" && curr === 0) {
-      display.textContent = "That's always 0!";
+      display.textContent = "Nope!";
     } else {
       console.table({ storedOp, acc, curr });
       operate(storedOp, acc, curr);
@@ -104,7 +104,7 @@ function getOp() {
     }
   } else if (acc === undefined) {
     if (storedOp === "/" && curr === 0) {
-      display.textContent = "That's always 0!";
+      display.textContent = "Nope!";
     } else {
       console.table({ storedOp, previous, curr });
       operate(storedOp, previous, curr);
@@ -114,7 +114,7 @@ function getOp() {
     }
   } else if (acc !== undefined) {
     if (storedOp === "/" && curr === 0) {
-      display.textContent = "That's always 0!";
+      display.textContent = "Nope!";
     } else {
       console.table({ storedOp, acc, curr });
       operate(storedOp, acc, curr);
@@ -135,7 +135,7 @@ equal.addEventListener("click", () => {
     operate(storedOp, previous, curr);
     if (storedOp === "/" && curr === 0) {
       console.log("zero?");
-      display.textContent = "That's always 0!";
+      display.textContent = "Nope!";
     } else {
       display.textContent = Number(acc.toFixed(7));
       console.log(acc);
@@ -144,7 +144,7 @@ equal.addEventListener("click", () => {
   } else if (acc !== undefined) {
     console.table({ storedOp, acc, curr });
     if (storedOp === "/" && curr === 0) {
-      display.textContent = "That's always 0!";
+      display.textContent = "Nope!";
     } else {
       operate(storedOp, acc, curr);
       display.textContent = Number(acc.toFixed(7));
